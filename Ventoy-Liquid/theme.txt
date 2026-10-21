@@ -1,0 +1,61 @@
+desktop-image: "background.png"
+title-text: " "
+title-color: "#ffffff"
+message-color: "#eaf4f7"
+message-font: "Inter Regular 16"
+
+terminal-box: "terminal_box_*.png"
+
++ boot_menu {
+  left = 15%
+  width = 70%
+  top = 25%
+  height = 58%
+
+  item_color = "#edf6f8"
+  item_font = "Inter Regular 22"
+  selected_item_font = "Inter Medium Regular 22"
+  item_height = 52
+  item_spacing = 4
+  item_padding = 12
+  item_icon_space = 14
+  icon_width = 44
+  icon_height = 44
+
+  selected_item_color = "#ffffff"
+  selected_item_pixmap_style = "select_*.png"
+
+  scrollbar = false
+}
+
++ progress_bar {
+  id = "__timeout__"
+  text = "@TIMEOUT_NOTIFICATION_SHORT@"
+  left = 78%
+  width = 14%
+  top = 89%
+  text_color = "#ffcf8a"
+  font = "Inter Regular 16"
+  bar_style = "*"
+  highlight_style = "*"
+}
+
++ hbox {
+  left = 18%
+  top = 89%
+  width = 58%
+  height = 25
+  + label { text = "@VTOY_MEM_DISK@" color = "#ffcf8a" font = "Inter Regular 16" align = "left" }
+  + label { text = "@VTOY_ISO_RAW@" color = "#ffcf8a" font = "Inter Regular 16" align = "left" }
+  + label { text = "@VTOY_GRUB2_MODE@" color = "#ffcf8a" font = "Inter Regular 16" align = "left" }
+  + label { text = "@VTOY_WIMBOOT_MODE@" color = "#ffcf8a" font = "Inter Regular 16" align = "left" }
+  + label { text = "@VTOY_ISO_UEFI_DRV@" color = "#ffcf8a" font = "Inter Regular 16" align = "left" }
+}
+
++ hbox {
+  left = 8%
+  top = 94%
+  width = 84%
+  height = 25
+  + label { text = "@VTOY_HOTKEY_TIP@" color = "#d9e9ed" font = "Inter Regular 16" align = "center" }
+}
