@@ -33,7 +33,7 @@ terminal-box: "terminal_box_*.png"
   text = "@TIMEOUT_NOTIFICATION_SHORT@"
   left = 78%
   width = 14%
-  top = 89%
+  top = 87%
   text_color = "#ffcf8a"
   font = "Inter Regular 16"
   bar_style = "*"
@@ -42,7 +42,7 @@ terminal-box: "terminal_box_*.png"
 
 + hbox {
   left = 28%
-  top = 91%
+  top = 87%
   width = 48%
   height = 25
   + label { text = "@VTOY_MEM_DISK@" color = "#ffcf8a" font = "Inter Regular 16" align = "left" }
@@ -54,7 +54,7 @@ terminal-box: "terminal_box_*.png"
 
 + hbox {
   left = 28%
-  top = 95%
+  top = 93%
   width = 10%
   height = 25
   + label { text = "@VTOY_HOTKEY_TIP@" color = "#e8f2f5" font = "Inter Regular 16" align = "left" }

@@ -24,9 +24,10 @@ const chip = '<rect x="6" y="6" width="12" height="12" rx="2" fill="none" stroke
   [9, 12, 15].map((p) => `<path d="M${p} 2.4V5M${p} 19v2.6M2.4 ${p}H5M19 ${p}h2.6" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>`).join('');
 const pie = '<circle cx="12" cy="12" r="9" fill="none" stroke="#fff" stroke-width="2.2"/><path d="M12 12V4.6A7.4 7.4 0 0 1 18 16.3z"/>';
 const clone = '<rect x="3" y="3" width="12" height="12" rx="2.6" fill="none" stroke="#fff" stroke-width="2.2"/><rect x="9" y="9" width="12" height="12" rx="2.6"/>';
-const easeusGlyph = '<path d="M17 5H8.5A1.5 1.5 0 0 0 7 6.5v11A1.5 1.5 0 0 0 8.5 19H17M7 12h8.5" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>';
-const reflectGlyph = '<path d="M12 3v18" fill="none" stroke="#fff" stroke-width="1.6" stroke-dasharray="2 2.2" stroke-linecap="round"/><path d="M10 7.2 3.2 18H10z" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><path d="M14 7.2 20.8 18H14z" fill-opacity="0.5" stroke="#fff" stroke-opacity="0.5" stroke-width="1" stroke-linejoin="round"/>';
-const shieldGlyph = '<path d="M12 2.8 4.8 5.6v5.7c0 4.4 3 8 7.2 9.9 4.2-1.9 7.2-5.5 7.2-9.9V5.6z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/><path d="m8.6 12.2 2.4 2.4 4.6-4.8" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>';
+// Redrawn marks that approximate the vendors' logos, only to identify the matching boot entries.
+const easeusGlyph = '<path d="M6.4 3.6h14l-1 3.6H5.6z"/><path d="M6.2 9.4h12.4l-1 3.4H9.6c-.5 0-.9.4-.9.9v1.2c0 .5.4.9.9.9h9.4l-1 3.4H8.2A4.2 4.2 0 0 1 4 15V11.6c0-1.2 1-2.2 2.2-2.2z"/>';
+const reflectGlyph = '<path d="M3 12.6C3.6 8 7.4 5.6 11.8 5.6V2.4l8.8 5.2-8.8 5.2V9.6c-3 0-5.2 1-6.6 3z" fill="#0b3a78"/><path d="M3 12.6C3.6 8 7.4 5.6 11.8 5.6V2.4l8.8 5.2-8.8 5.2V9.6c-3 0-5.2 1-6.6 3z" fill="#1ea0e8" transform="rotate(180 12 12)"/>';
+const acronisGlyph = '<path d="M12 3.6 5.2 20.4M12 3.6l6.8 16.8M8 15.6h8M9.7 10.6h4.6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>';
 const back = '<path d="M19.5 12H5M11.5 5.2 4.6 12l6.9 6.8" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>';
 const lifebuoy = (tint) => `<circle cx="12" cy="12" r="7.3" fill="none" stroke="#fff" stroke-width="5"/>` +
   [45, 135, 225, 315].map((a) => `<line x1="12" y1="12" x2="12" y2="2" stroke="${tint}" stroke-width="4.6" transform="rotate(${a} 12 12) translate(0 0)" stroke-dasharray="0 4.6 4.8 100"/>`).join('');
@@ -130,10 +131,10 @@ const icons = {
   gparted: [...tone('3aa59a'), pie],
   clonezilla: [...tone('f0a020'), clone],
 
-  // backup and recovery suites; neutral glyphs in tile colours of my own choosing, not the vendors' logos
-  easeus: [...tone('12b5cb'), easeusGlyph],
-  macrium: [...tone('e0457b'), reflectGlyph],
-  acronis: [...tone('3b5bdb'), shieldGlyph],
+  // backup and recovery suites
+  easeus: [...tone('1f6fe5'), easeusGlyph],
+  macrium: ['#ffffff', '#cfdaea', reflectGlyph],
+  acronis: [...tone('0b2f6b'), acronisGlyph],
 };
 
 function iconSvg(spec) {

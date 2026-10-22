@@ -84,8 +84,8 @@ const cfg = {
   theme: {
     file: '/ventoy/themes/Ventoy-Liquid/theme.txt',
     gfxmode: 'max',
-    ventoy_left: '3%',
-    ventoy_top: '95%',
+    ventoy_left: '5%',
+    ventoy_top: '93%',
     ventoy_color: '#cfe0e6',
     fonts: [
       '/ventoy/themes/Ventoy-Liquid/fonts/Inter-Regular-22.pf2',

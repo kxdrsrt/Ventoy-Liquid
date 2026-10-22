@@ -94,9 +94,9 @@ ctx.restoreGState()
 ctx.drawLinearGradient(gradient([black(0.0), black(0.30), black(0.40)]),
                        start: CGPoint(x: 0, y: 190), end: CGPoint(x: 0, y: 0), options: [])
 
-// Glass bar behind the hotkey line (top = 95% in theme.txt) and Ventoy's version text.
+// Glass bar behind the hotkey line (top = 93% in theme.txt) and Ventoy's version text (ventoy_top 93%).
 // Full width because the text width in pixels, and so its end position, depends on the screen resolution.
-let bar = R(48, 1008, 1824, 56)
+let bar = R(48, 981, 1824, 72)
 let barRadius = bar.height / 2
 ctx.saveGState()
 ctx.setShadow(offset: CGSize(width: 0, height: -6), blur: 24, color: black(0.40))
