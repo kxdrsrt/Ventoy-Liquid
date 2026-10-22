@@ -15,12 +15,12 @@ terminal-box: "terminal_box_*.png"
   item_color = "#edf6f8"
   item_font = "Inter Regular 22"
   selected_item_font = "Inter Medium Regular 22"
-  item_height = 52
+  item_height = 60
   item_spacing = 4
   item_padding = 12
   item_icon_space = 14
-  icon_width = 44
-  icon_height = 44
+  icon_width = 52
+  icon_height = 52
 
   selected_item_color = "#ffffff"
   selected_item_pixmap_style = "select_*.png"
@@ -41,9 +41,9 @@ terminal-box: "terminal_box_*.png"
 }
 
 + hbox {
-  left = 18%
-  top = 89%
-  width = 58%
+  left = 28%
+  top = 91%
+  width = 48%
   height = 25
   + label { text = "@VTOY_MEM_DISK@" color = "#ffcf8a" font = "Inter Regular 16" align = "left" }
   + label { text = "@VTOY_ISO_RAW@" color = "#ffcf8a" font = "Inter Regular 16" align = "left" }
@@ -53,9 +53,9 @@ terminal-box: "terminal_box_*.png"
 }
 
 + hbox {
-  left = 8%
-  top = 94%
-  width = 84%
+  left = 28%
+  top = 95%
+  width = 10%
   height = 25
-  + label { text = "@VTOY_HOTKEY_TIP@" color = "#d9e9ed" font = "Inter Regular 16" align = "center" }
+  + label { text = "@VTOY_HOTKEY_TIP@" color = "#e8f2f5" font = "Inter Regular 16" align = "left" }
 }

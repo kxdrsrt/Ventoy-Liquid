@@ -90,9 +90,39 @@ ctx.drawLinearGradient(gradient([white(0.28), white(0.0)]),
                        start: CGPoint(x: 0, y: panel.maxY), end: CGPoint(x: 0, y: panel.maxY - 160), options: [])
 ctx.restoreGState()
 
-// Darken the bottom edge slightly for the hotkey line.
-ctx.drawLinearGradient(gradient([black(0.0), black(0.38)]),
-                       start: CGPoint(x: 0, y: 150), end: CGPoint(x: 0, y: 0), options: [])
+// Darken the bottom edge so the hotkey line and Ventoy's version text stay legible.
+ctx.drawLinearGradient(gradient([black(0.0), black(0.30), black(0.40)]),
+                       start: CGPoint(x: 0, y: 190), end: CGPoint(x: 0, y: 0), options: [])
+
+// Glass bar behind the hotkey line (top = 95% in theme.txt) and Ventoy's version text.
+// Full width because the text width in pixels, and so its end position, depends on the screen resolution.
+let bar = R(48, 1008, 1824, 56)
+let barRadius = bar.height / 2
+ctx.saveGState()
+ctx.setShadow(offset: CGSize(width: 0, height: -6), blur: 24, color: black(0.40))
+ctx.addPath(panelPath(bar, barRadius))
+ctx.setFillColor(black(0.30))
+ctx.fillPath()
+ctx.restoreGState()
+
+ctx.saveGState()
+ctx.addPath(panelPath(bar, barRadius))
+ctx.clip()
+ctx.draw(frost, in: full)
+ctx.setFillColor(black(0.40))
+ctx.fill(bar)
+ctx.drawLinearGradient(gradient([white(0.16), white(0.03)]),
+                       start: CGPoint(x: 0, y: bar.maxY), end: CGPoint(x: 0, y: bar.minY), options: [])
+ctx.restoreGState()
+
+ctx.saveGState()
+ctx.addPath(panelPath(bar.insetBy(dx: 0.75, dy: 0.75), barRadius))
+ctx.setLineWidth(1.5)
+ctx.replacePathWithStrokedPath()
+ctx.clip()
+ctx.drawLinearGradient(gradient([white(0.60), white(0.15), white(0.10), white(0.25)]),
+                       start: CGPoint(x: 0, y: bar.maxY), end: CGPoint(x: 0, y: bar.minY), options: [])
+ctx.restoreGState()
 
 // Title and subtitle.
 NSGraphicsContext.saveGraphicsState()
