@@ -61,6 +61,7 @@ The `fonts` list is required, Ventoy only loads fonts that are registered there.
 - `generate_icons.cjs` (Node): renders the icons, selection pill and terminal box. Needs `npm i simple-icons @resvg/resvg-js`.
 - `generate_ventoy_json.cjs` (Node): writes `ventoy.example.json` from a list of (class, keys) pairs; keep it in sync when adding an icon.
 - The `.pf2` fonts were made with `grub-mkfont` from the Inter static TTFs.
+- `patch_font_space.cjs` (Node): sets the width of the space glyph. `Inter-Regular-16.pf2` uses 13 px (`node patch_font_space.cjs Ventoy-Liquid/fonts/Inter-Regular-16.pf2 13`) because Ventoy's hotkey line is one string with single spaces and would look cramped otherwise.
 
 ## Credits and licences
 
